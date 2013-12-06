@@ -8,16 +8,13 @@ namespace GenericViewModel.Web.Models.Home
     public abstract class GenericModel
     {
         public string Name { get; set; }
-        public object SubModel
-        {
-            get { return GetSubModel(); }
-        }
+        public object SubModel { get { return GetSubModel(); } }
         protected abstract object GetSubModel();
     }
 
-    public class GenericModel<T> : GenericModel
+    public class GenericModel<TSubModel> : GenericModel
     {
-        public T SubModel { get; set; }
+        public TSubModel SubModel { get; set; }
 
         protected override object GetSubModel()
         {
