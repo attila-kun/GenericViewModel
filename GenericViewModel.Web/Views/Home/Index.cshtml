@@ -3,5 +3,9 @@
     ViewBag.Title = "Index";
 }
 
-@Html.EditorFor(model => model.SpecificControl1)
-@Html.EditorFor(model => model.SpecificControl2)
+@using (Html.BeginForm())
+{
+	@Html.EditorFor(model => model.SpecificControl1)
+	@Html.EditorFor(model => model.SpecificControl2)
+	<input type="submit" value="Submit" />
+}

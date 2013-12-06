@@ -31,5 +31,11 @@ namespace GenericViewModel.Web.Controllers
                 }
             });
         }
+
+        [HttpPost]
+        public ActionResult Index(HomeModel homeModel)
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
