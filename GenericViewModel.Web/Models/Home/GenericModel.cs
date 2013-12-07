@@ -14,11 +14,14 @@ namespace GenericViewModel.Web.Models.Home
 
     public class GenericModel<TSubModel> : GenericModel
     {
+        /// <summary>
+        /// This needs to have the same name as the base class' SubModel property (otherwise model instantiation at post wouldn't work).
+        /// </summary>
         public TSubModel SubModel { get; set; }
 
         protected override object GetSubModel()
         {
-            return (object)this.SubModel;
+            return (object)SubModel;
         }
     }
 
